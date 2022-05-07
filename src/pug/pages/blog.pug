@@ -1,0 +1,39 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Главная',
+      isHome: false,
+      section: 3,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+      order: 3.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  section.blog
+    .blog__container.container
+      header.blog__header
+        h1.visually-hidden Блог
+        .blog__filter
+          each item, index in POSTS_FILTERS
+            - const active = item.category === 'all' ? ' blog__filter-item--active' : '';
+            button.blog__filter-item(class= active, type="button", data-filter= item.category)!= item.text
+
+      .blog__main
+        .blog__grid
+          each item in POSTS
+            article.blog__item.post-preview(data-category= (item.category === null ? 'all' : item.category))
+              .post-preview__image
+                img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+              .post-preview__main
+                h2.post-preview__title!= item.title
+                .post-preview__text!= item.text
+                .post-preview__bottom
+                  .post-preview__meta
+                    time.post-preview__date(datetime= item.date.attr)!= item.date.text
+                    .post-preview__duration!= item.duration
+                  a.post-preview__button.button(href= item.url) Перейти
+
+

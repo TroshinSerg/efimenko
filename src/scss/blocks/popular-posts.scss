@@ -1,0 +1,44 @@
+.popular-posts {
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  @include media(xxl) {
+    padding-bottom: 80px;
+  }
+
+  &__container {
+    @include media(xl) {
+      max-width: 970px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -32px;
+
+    @include media(md) {
+      margin-left: -15px;
+    }
+
+    @include media(xl) {
+      margin-left: -32px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-top: 32px;
+
+    @include media(md) {
+      width: calc(33.33% - 15px);
+      margin-top: 32px;
+      margin-left: 15px;
+    }
+
+    @include media(xl) {
+      width: calc(33.33% - 32px);
+      margin-left: 32px;
+    }
+  }
+}

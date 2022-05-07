@@ -1,0 +1,11 @@
+mixin custom-radio(arr, name, checkedNum, className)
+  div(class= className ? className + ' custom-radio' : 'custom-radio')
+    if arr.length
+      each item, index in arr
+        label.custom-radio__item
+          if checkedNum && checkedNum === (index + 1)
+            input.visually-hidden(type="radio", name= name, value= item.value, checked)
+          else
+            input.visually-hidden(type="radio", name= name, value= item.value)
+          span.custom-radio__text
+            span= item.text

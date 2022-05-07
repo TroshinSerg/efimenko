@@ -1,0 +1,40 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * {
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333;
+  }
+
+  & > * + * {
+    position: relative;
+    margin-left: 12px;
+
+    &::before {
+      content: "/";
+      position: absolute;
+      left: -15px;
+      pointer-events: none;
+    }
+  }
+
+  a {
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: #000;
+
+      &::before {
+        color: #333;
+      }
+    }
+  }
+
+  span {
+    color: #000;
+  }
+}

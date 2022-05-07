@@ -1,0 +1,36 @@
+.social {
+  $self: &;
+
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  margin-left: -10px;
+
+  &__item {
+    margin-left: 10px;
+    margin-top: 10px;
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
+    svg {
+      display: block;
+      fill: #000;
+      transition: fill 0.3s ease;
+    }
+
+    @include hover {
+      svg {
+        fill: yellow;
+      }
+    }
+
+    &:active {
+      opacity: 0.85;
+    }
+  }
+}

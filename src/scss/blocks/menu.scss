@@ -1,0 +1,40 @@
+.menu {
+  padding: 13px 0;
+
+  &__list {
+    @include list-reset;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-left: -20px;
+  }
+
+  &__item {
+    $item: &;
+
+    align-self: center;
+    margin: 10px 0 0 20px;
+
+    &--current {
+      #{$item}__link {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    color: $color-default-black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: $color-blue;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

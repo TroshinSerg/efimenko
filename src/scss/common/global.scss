@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family--main;
+  font-size: 18px;
+  line-height: 1.5;
+
+  //@include text();
+  font-weight: 400;
+
+  & > header,
+  & > footer {
+    flex-shrink: 0;
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+}

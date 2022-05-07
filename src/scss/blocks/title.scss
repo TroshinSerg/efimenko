@@ -1,0 +1,14 @@
+.title {
+  margin: 0;
+  font-family: $font-family--secondary;
+  font-size: 32px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: $color-blue;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include media(sm) {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,51 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Контакты',
+      isHome: false,
+      section: 4,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+      order: 4.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  section.contacts
+    .contacts__container.container
+      .contacts__main
+        h2.contacts__title.title Связаться
+        .contacts__text Я отвечаю на звонки, смс в мессенджерах и читаю электронную почту.
+
+        .contacts__item
+          a(href="mailto:v@efimenko.info") v@efimenko.info
+
+        .contacts__item
+          a(href="mailto:+79261439596") +7 (926) 143 95 96
+          | , Валерий
+
+        .contacts__icons
+          a(href="https://api.whatsapp.com/send?phone=79261439596")
+            +icon('whatsapp')(width="24", height="24")
+
+
+
+      .contacts__aside
+        .contacts__form.form
+          form(action="#" method="post")
+            label.form__field.field
+              input(type="text", name="name", placeholder="Имя", required)
+
+            label.form__field.field
+              input(type="email", name="email", placeholder="Эл. почта", required)
+
+            label.form__field.field
+              input(type="tel", name="phone", placeholder="Телефон")
+
+            label.form__field.field.field--textarea
+              textarea(name="message", placeholder="Добавьте сообщение...")
+
+            button.form__button.button.button--theme-black(type="submit") Отправить
+
+  .prefooter.prefooter--bg-fixed

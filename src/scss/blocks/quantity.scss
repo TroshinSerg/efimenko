@@ -1,0 +1,48 @@
+.quantity {
+  display: inline-flex;
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+
+    svg {
+      display: block;
+      fill: #000;
+      transition: fill 0.3s ease;
+      align-self: center;
+    }
+
+    @include hover {
+      svg {
+        fill: blue;
+      }
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 60px;
+    padding: 12px 5px;
+    font-size: 19px;
+    line-height: 1;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    border: solid 1px #333;
+    transition: border-color 0.3s ease;
+
+    /*@include max(sm) {
+      width: calc(100% - 118px);
+      margin-left: -1px;
+      margin-right: -1px;
+    }*/
+
+    @include hover {
+      border-color: #000;
+    }
+  }
+}

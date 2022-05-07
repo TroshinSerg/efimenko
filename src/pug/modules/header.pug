@@ -1,0 +1,17 @@
+header.header
+  .header__container.container
+    .header__slogan
+      p Только вперед и вверх!
+      p Seulement vers l'avant et vers le haut!
+
+    button.header__button.button(type="button") Отправить резюме
+
+    nav.header__menu.menu
+      ul.menu__list
+        each item in MENU
+          if page.section === item.section
+            li.menu__item.menu__item--current
+              a.menu__link!= item.text
+          else
+            li.menu__item
+              a.menu__link(href= item.url)!= item.text

@@ -1,0 +1,7 @@
+mixin custom-checkbox(name, text, isChecked, className)
+  label(class= className ? className + ' custom-checkbox' : 'custom-checkbox')
+    if isChecked
+      input.visually-hidden(type="checkbox", name= name, checked)
+    else 
+      input.visually-hidden(type="checkbox", name= name)
+    span.custom-checkbox__text!= text

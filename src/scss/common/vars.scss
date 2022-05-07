@@ -1,0 +1,46 @@
+// Colors
+//---------------------------------
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+$color-blue: #194056;
+$color-smoky: #f7f7f7;
+$color-grey: #bfbfbf;
+
+$font-family--main: "Montserrat", "Arial", sans-serif;
+$font-family--secondary: "Helvetica", sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 1.5; //24px
+
+/////////////////////////////
+$default-transition-settings: 0.3s ease;
+
+// Viewports
+//---------------------------------
+
+$breakpoints: (
+  default: "default",
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxx: 1900px,
+) !default;
+
+// container max width
+$containerMaxWidths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1340px,
+  xxx: 1840px,
+) !default;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

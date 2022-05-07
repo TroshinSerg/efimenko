@@ -1,0 +1,26 @@
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px 15px;
+
+  font-size: 15px;
+  line-height: 1;
+  color: $color-default-white;
+  text-align: center;
+
+  border: none;
+
+  background-color: $color-blue;
+
+  transition: background-color 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+
+  @include hover {
+    background-color: lighten($color-blue, 15%);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

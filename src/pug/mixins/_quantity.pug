@@ -1,0 +1,7 @@
+mixin quantity(value, className)
+  div(class= (className ? `${className} quantity` : 'quantity'))
+    button.quantity__btn(type="button", data-action="minus", aria-label="Уменьшить количество товара")
+      +icon('minus')(width="7", height="3")
+    input.quantity__input(type="number", name="quantity", value= value)
+    button.quantity__btn(type="button", data-action="plus", aria-label="Увеличить количество товара")
+      +icon('plus')(width="12", height="11")

@@ -1,0 +1,16 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Главная',
+      isHome: false,
+      section: 3,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+      order: 3.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+
+  .container

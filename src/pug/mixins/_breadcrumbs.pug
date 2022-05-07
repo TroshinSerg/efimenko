@@ -1,0 +1,8 @@
+mixin breadcrumbs(arr, className)
+  div(class= className ? className + ' breadcrumbs' : 'breadcrumbs')
+    a(href= URLS.home) Главная
+    each item in arr
+      if item.url
+        a(href= item.url)= item.text
+      else
+        span= item.text

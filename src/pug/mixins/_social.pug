@@ -1,0 +1,6 @@
+mixin social(arr, className)
+	ul.social(class= className)
+		each item in arr
+			li.social__item
+				a(href='#', target='_blank')
+					+icon(item)(width='30', height='30')

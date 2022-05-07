@@ -1,0 +1,52 @@
+.header {
+  padding: 36px 0 18px;
+
+  &__container {
+    @include media(sm) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include media(xxl) {
+      max-width: 1780px;
+    }
+
+    & > * {
+      align-self: center;
+    }
+  }
+
+  &__slogan {
+    margin-bottom: 20px;
+    font-size: 15px;
+
+    @include media(sm) {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: 5px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+
+    @include media(sm) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-top: 22px;
+    border-top: solid 1px $color-blue;
+  }
+}

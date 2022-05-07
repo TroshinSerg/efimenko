@@ -1,0 +1,17 @@
+.prefooter {
+  @extend .container;
+  margin: 0 auto;
+  height: 510px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  background-image: url("../images/prefooter.webp");
+
+  @include media(xxl) {
+    max-width: 1750px;
+  }
+
+  &--bg-fixed {
+    background-attachment: fixed;
+  }
+}

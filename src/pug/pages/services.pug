@@ -1,0 +1,29 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Услуги компании «Консультация по поиску работы»',
+      isHome: false,
+      section: 2,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+      order: 2.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.services
+    .services__container.container
+      h1.services__title.title Услуги компании «Консультация по поиску работы»
+
+      .services__subtitle Превосходя ожидания
+
+      each item, index in SERVICES
+        - const mod = index % 2 !== 0 ? ' service--reverse' : '';
+        .services__item.service(class= mod)
+          .service__image
+            img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+          .service__main
+            h2.service__title!= item.title
+            .service__subtitle!= item.subtitle
+            .service__text!= item.text

@@ -1,0 +1,119 @@
+.post-preview {
+  display: flex;
+  flex-direction: column;
+
+  @include media(lg) {
+    flex-direction: row;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+
+    @include media(lg) {
+      width: 470px;
+      height: 350px;
+    }
+
+    img {
+      @include image-cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px 20px;
+    border: solid 1px $color-grey;
+    border-top: none;
+    flex-grow: 1;
+
+    @include media(lg) {
+      width: calc(100% - 470px);
+      padding: 40px 48px;
+      border: solid 1px $color-grey;
+      border-left: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: $font-family--secondary;
+    font-size: 22px;
+    line-height: 1.136363636363636;
+    font-weight: 400;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: rgba($color-default-black, 0.8);
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include media(lg) {
+      margin-top: auto;
+      flex-grow: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__meta {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+
+    @include media(lg) {
+      margin-bottom: 0;
+      margin-right: 24px;
+      justify-content: flex-start;
+      align-self: center;
+    }
+  }
+
+  &__date {
+    margin-right: 20px;
+    font-size: 12px;
+    color: rgba($color-default-black, 0.8);
+    align-self: center;
+  }
+
+  &__duration {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: rgba($color-default-black, 0.8);
+    align-self: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill-opacity='0.8' viewBox='0 0 32 32'%3e%3cpath d='M16 4C9.383 4 4 9.383 4 16s5.383 12 12 12 12-5.383 12-12S22.617 4 16 4Zm0 2c5.535 0 10 4.465 10 10s-4.465 10-10 10S6 21.535 6 16 10.465 6 16 6Zm-1 2v9h7v-2h-5V8Z'/%3e%3c/svg%3e");
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+
+    @include media(lg) {
+      display: inline-block;
+      width: auto;
+      align-self: center;
+    }
+  }
+}

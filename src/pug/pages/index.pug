@@ -1,0 +1,113 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Главная',
+      isHome: true,
+      section: 1,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+      order: 1.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  section.hero
+    .hero__container.container
+      h1.hero__title Консультация по поиску работы
+      .hero__subtitle На шаг впереди
+      .hero__text После сотрудничества быстрее выйдете на работу. Я даю инструменты, необходимые для достижения целей. Сам - экономист-международник со степенью МВА по стратегии. В Москве начал трудовую деятельность в 2004 году. Компетенции в экономике, HR, консалтинге, управлении проектами, финансах, страховании, банковской сфере, машиностроении, авиастроении, строительстве, IT, логистике, продажах и торговле. Консультации по поиску работы проводятся тет-а-тет.
+
+      a.hero__button.button(href= URLS.blog) Узнать больше
+
+  section.services-section
+    .services-section__container.container
+      h2.services-section__title.title Услуги
+      .services-section__intro Помогаю людям, передавая знания и опыт в поиске работы 10 лет. 3 000 человек стали клиентами и нашли работу.
+
+      .services-section__grid
+        each item in SERVICES_LIST
+          .services-section__item.services-preview
+            .services-preview__image
+              img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+            .services-preview__main
+              h3.services-preview__title!= item.title
+              .services-preview__subtitle!= item.subtitle
+              .services-preview__text!= item.text
+
+  section.popular-posts
+    .popular-posts__container.container
+      .popular-posts__grid
+        each item in POPULAR_POSTS
+          .popular-posts__item.popular-post-preview
+            a.popular-post-preview__image(href= item.url)
+              img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+            .popular-post-preview__main
+              h3.popular-post-preview__title
+                a(href= item.url)!= item.title
+
+  section.reviews
+    .reviews__container.container
+      .reviews__title.title Отзывы
+
+      .reviews__slider
+        .swiper
+          .swiper-wrapper
+            each item in REVIEWS
+              .reviews__item.swiper-slide
+                .reviews__item-icon
+                  +icon('quote')(width="49" height="51")
+
+                .reviews__item-text!= item.text
+                .reviews__item-author!= item.author
+          .swiper-pagination
+        .reviews__nav
+          button.nav-button.nav-button--prev(type="button")
+            +icon('prev')(width="7", height="12")
+          button.nav-button.nav-button--next(type="button")
+            +icon('next')(width="7", height="12")
+
+  section.contacts
+    .contacts__container.container
+      .contacts__main
+        h2.contacts__title.title Связаться
+        .contacts__text Я отвечаю на звонки, смс в мессенджерах и читаю электронную почту.
+
+        .contacts__item
+          a(href="mailto:v@efimenko.info") v@efimenko.info
+
+        .contacts__item
+          a(href="mailto:+79261439596") +7 (926) 143 95 96
+          | , Валерий
+
+        .contacts__icons
+          a(href="https://api.whatsapp.com/send?phone=79261439596")
+            +icon('whatsapp')(width="24", height="24")
+
+
+
+      .contacts__aside
+        .contacts__form.form
+          form(action="#" method="post")
+            label.form__field.field
+              input(type="text", name="name", placeholder="Имя", required)
+
+            label.form__field.field
+              input(type="email", name="email", placeholder="Эл. почта", required)
+
+            label.form__field.field
+              input(type="tel", name="phone", placeholder="Телефон")
+
+            label.form__field.field.field--textarea
+              textarea(name="message", placeholder="Добавьте сообщение...")
+
+            button.form__button.button.button--theme-black(type="submit") Отправить
+
+  .prefooter.prefooter--bg-fixed
+    //- +breadcrumbs([], 'className')
+    //- +custom-checkbox('custom-checkbox-name', 'согласен на обработку данных', true, 'className')
+    //- +custom-radio([{value: '1', text: 'text 1'}, {value: '2', text: 'text 2'}], 'custom-radio-name', 2, 'className')
+    //- +quantity(2, 'className')
+    //- +social(['vk', 'instagram', 'youtube'], 'className')
+    //- img(src="images/april.jpg", srcset="images/april@2x.jpg 2x", alt="")
+
