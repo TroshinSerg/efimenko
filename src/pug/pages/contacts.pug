@@ -6,7 +6,7 @@ block variables
       title: 'Контакты',
       isHome: false,
       section: 4,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-      order: 4.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+      order: 4,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
     };
 
     const bc = [{text: page.title}];
@@ -32,15 +32,15 @@ block content
 
 
       .contacts__aside
-        .contacts__form.form
-          form(action="#" method="post")
-            label.form__field.field
-              input(type="text", name="name", placeholder="Имя", required)
+        .contacts__form.form.form--smoky
+          form(method="post")
+            label.form__field.field.field--req
+              input(type="text", name="name", placeholder="Имя")
 
-            label.form__field.field
-              input(type="email", name="email", placeholder="Эл. почта", required)
+            label.form__field.field.field--req
+              input(type="email", name="email", placeholder="Эл. почта")
 
-            label.form__field.field
+            label.form__field.field.field--req
               input(type="tel", name="phone", placeholder="Телефон")
 
             label.form__field.field.field--textarea

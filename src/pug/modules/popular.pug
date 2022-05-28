@@ -1,0 +1,15 @@
+section.popular-posts
+  .popular-posts__container.container
+    if !page.isHome
+      header.popular-posts__header
+        h2.popular-posts__title Популярные записи
+        a.popular-posts__more(href= URLS.blog) Смотреть все
+
+    .popular-posts__grid
+      each item in POPULAR_POSTS
+        .popular-posts__item.popular-post-preview
+          a.popular-post-preview__image(href= item.url)
+            img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+          .popular-post-preview__main
+            h3.popular-post-preview__title
+              a(href= item.url)!= item.title

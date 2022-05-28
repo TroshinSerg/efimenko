@@ -1,0 +1,38 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Карьерные треки',
+      isHome: false,
+      section: 3,
+      order: 3.25,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-25.webp", width="1100" height="1650", alt="")
+        h1.post__title Карьерные треки.
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Смею предположить, что в карьерном плане люди, переведенные на удаленку, окажутся в худшем положении, нежели те, кто трудится в офисе. Сотрудник, находящийся на удаленке, получит застой в карьерном развитии. Это связано с тем, что, не видя работников на постоянной основе, руководство не полностью осознает их вклад, если нет конкретных технических показателей. В связи с этим оно будет повышать по карьерной лестнице тех, с кем взаимодействует на постоянной основе, говоря по-простому, того, кого видел и знает.
+
+          p Очевидно, что новый уклад внесет новые формы взаимодействия, поэтому будут внесены соответствующие нормы в трудовое законодательство. Однако есть еще эмоциональная составляющая, способная повлиять на взаимодействие сотрудников. Многим работникам на удаленке не хватает живого общения с коллегами: большое количество людей чувствуют себя одинокими и подавленными. Им бывает сложно переключиться из режима "работа" в режим "отдых".
+
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

@@ -1,0 +1,63 @@
+.modal {
+  position: fixed;
+  z-index: 101;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 90%;
+  max-width: 480px;
+  padding: 40px 24px;
+  font-size: 14px;
+  background-color: $color-default-white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  @include media(md) {
+    padding: 40px;
+    font-size: 16px;
+  }
+
+  &--shown {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__header {
+  }
+  &__main {
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: 20px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    appearance: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: $color-blue;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__text {
+  }
+
+  &__form {
+  }
+}

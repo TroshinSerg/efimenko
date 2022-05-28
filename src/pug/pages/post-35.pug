@@ -1,0 +1,37 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Ограничения при приеме на работу',
+      isHome: false,
+      section: 3,
+      order: 3.35,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-35.webp", width="1080" height="1620", alt="")
+        h1.post__title Ограничения при приеме на работу.
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Нельзя никого ограничивать в реализации его трудовых прав. Согласно ст. 3 Трудового кодекса РФ, никакие обстоятельства, кроме деловых и профессиональных качеств, не могут служить причиной для отказа соискателю в приеме на работу. Однако трудовым законодательством все-таки предусмотрены некоторые ограничения и запреты. Для того, чтобы понимать, насколько правомерным является тот или иной отказ в приеме на работу, необходимо знать, какие ограничения при приеме на работу установлены законодательством.
+
+          p Согласно российскому законодательству, возрастной ценз при приеме на работу имеет только нижний предел. Верхнего предела у него нет.
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

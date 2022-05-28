@@ -1,0 +1,32 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Продолжаю рубрику неубедительных причин держаться за плохую работу',
+      isHome: false,
+      section: 3,
+      order: 3.10,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-10.webp", width="1080" height="1620", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу.
+        .post__meta
+          time.post__date.date(datetime="2020-06-04") 4 июн. 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Новые знания и возможность развиваться делают работу насыщенной, а человеку приносят удовлетворение и массу впечатлений. Если Вас давно не отправляли на тренинги, компания не занимается развитием потенциала сотрудников, а будние дни похожи как две капли воды, то задумайтесь, стоит ли тратить свое время здесь. Постарайтесь найти причину скуки и однообразия. Возможно, разговор с начальством позволит получить другую должность, где Вам придется обучаться, чтобы действовать эффективно.
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

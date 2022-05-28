@@ -1,0 +1,47 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Продолжаю рубрику неубедительных причин держаться за плохую работу',
+      isHome: false,
+      section: 3,
+      order: 3.24,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-24.webp", width="1080" height="1620", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу.
+
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Подъем утром.
+
+          p Невозможность вставания на работу по утрам, наверное, является самой главной причиной для увольнения. Именно это и есть настоящий признак того, что работа не по душе. И в том случае, когда рядом с кроватью стоят 3 будильника и невозможно подвинуться с места, напрашивается вывод, что необходимо найти новую работу.
+
+          p Более того, если чувство пустоты преследует Вас даже после продолжительного и полноценного сна по утрам, то, естественно, эта вовсе не та работа, которая должна быть. Против этого «времяпрепровождения» бунтует организм. Следовательно, его необходимо послушать.
+
+          p Да, да именно прислушайтесь к своему организму.
+
+          p Он всегда подсказывает нам !
+
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

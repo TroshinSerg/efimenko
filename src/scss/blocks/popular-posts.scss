@@ -12,6 +12,53 @@
     }
   }
 
+  &__header {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include media(sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    @include media(md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 400;
+
+    @include media(sm) {
+      margin: 0 32px 0 0;
+    }
+
+    @include media(md) {
+      font-size: 32px;
+    }
+  }
+
+  &__more {
+    font-size: 16px;
+    color: $color-default-black;
+    transition: color 0.3s ease;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: lighten($color-blue, 20%);
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
   &__grid {
     display: flex;
     flex-wrap: wrap;

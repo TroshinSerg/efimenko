@@ -3,14 +3,29 @@ extends ../templates/main
 block variables
   -
     const page = {
-      title: 'Главная',
+      title: 'Lapublicité',
       isHome: false,
-      section: 3,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-      order: 3.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+      section: 3,
+      order: 3.40,
     };
 
     const bc = [{text: page.title}];
 
 block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-1.webp", width="1080" height="1620", alt="")
+        h1.post__title Lapublicité
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
 
-  .container
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

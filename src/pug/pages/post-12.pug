@@ -1,0 +1,50 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: '8 ответов на 8 вопросов, которые изменят вашу жизнь',
+      isHome: false,
+      section: 3,
+      order: 3.12,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-12.webp", width="1080" height="1620", alt="")
+        h1.post__title 8 ответов на 8 вопросов, которые изменят вашу жизнь.
+        .post__meta
+          time.post__date.date(datetime="2020-06-01") 1 июн. 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Вопросы - великая вещь. А правильно поставленный вопрос решает массу проблем. Вопросы пробуждают осознанность и включают трезвый взгляд на вещи. А порой сбрасывают пелену с глаз. Список главных вопросов, которые следует задавать себе время от времени и давать на них честные ответы.
+
+          ol
+            li ЧТО Я ДАЮ ЭТОМУ МИРУ?
+            li СКОЛЬКО ОТМАЗОК МНОЮ ПРИДУМАНО ЗА ПОСЛЕДНЕЕ ВРЕМЯ?
+            li ЕСТЬ ЛИ РОСТ?
+            li ЧЕМ ЛИШНИМ Я СЕБЯ НАГРУЖАЮ?
+            li ЧЕГО Я ХОЧУ НА САМОМ ДЕЛЕ?
+            li ЗАКРЫВАЮ ЛИ Я СВОИ ПОТРЕБНОСТИ?
+            li НА ЧТО Я ТРАЧУ ВРЕМЯ?
+            li ЧЕМУ Я СОПРОТИВЛЯЮСЬ?
+
+
+          p Ответы внутри Вас!
+
+
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

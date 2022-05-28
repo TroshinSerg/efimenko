@@ -1,0 +1,39 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Продолжаю рубрику неубедительных причин держаться за плохую работу',
+      isHome: false,
+      section: 3,
+      order: 3.17,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-17.webp", width="1100" height="1650", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Нежелание брать на себя новые задачи является одной из причин увольнения по собственному желанию. Если Вам настолько не нравится работа, что даже нет желания на выполнения новых задач, из этого надо сделать вывод, что Вам скоро придется покинуть эту работу. Если при каждом возвращении в офис Вам мозг становится кашей, то пришло время уволиться. Нужно задать себе несколько вопросов: каким образом произошло устройство на работу? Действительно ли это то место, о котором Вы всегда мечтали? Является ли для Вас Ваша работа стимулом? Стоит ли двигаться дальше в том случае, если у Вас на все эти вопросы имеются только отрицательные ответы?
+
+
+          p Выбор за Вами.
+
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

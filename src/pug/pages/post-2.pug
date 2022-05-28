@@ -1,0 +1,38 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'ПРОДОЛЖАЮ РУБРИКУ НЕУБЕДИТЕЛЬНЫХ ПРИЧИН ДЕРЖАТЬСЯ ЗА ПЛОХУЮ РАБОТУ.',
+      isHome: false,
+      section: 3,
+      order: 3.02,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-2.jpg", width="1080" height="1620", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу
+        .post__meta
+          time.post__date.date(datetime="2022-01-28") 28 янв.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Если работа не соответствует моральным принципам и убеждениям, вкусам или особенностям Вашего характера вы вряд ли добьетесь успеха в этой области.
+
+          p Если не умеете врать и сложно обмануть человека, работа продавца подержанных автомобилей Вам точно не подойдет. Не любите сплетни и пересуды, в редакции желтой газеты Вам делать нечего, все равно как бы не старались.
+
+          p Если решили, что причин для смены работы больше, чем причин остаться и они достаточно вески, то вперед на поиски новой работы.
+
+          p Удачи Вам в этом!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

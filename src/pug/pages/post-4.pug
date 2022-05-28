@@ -1,0 +1,37 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Продолжаю рубрику неубедительных причин держаться за плохую работу',
+      isHome: false,
+      section: 3,
+      order: 3.04,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-4.webp", width="1080" height="1620", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу.
+        .post__meta
+          time.post__date.date(datetime="2021-09-22") 22 сент. 2021 г.
+
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Изменения в характере работы.
+
+          p Например, добавление новых обязанностей без повышения зарплаты или смена графика. В современных условиях отсутствие изменения невозможно, однако оно всегда должно сопровождаться дополнительными обстоятельствами и действиями. А когда этого не происходит, человек может начать искать другое применение своим навыкам и умениям.
+
+          p А нужно и как прописать это в резюме,  можно узнать на консультации.
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

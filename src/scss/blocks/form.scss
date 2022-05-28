@@ -1,4 +1,48 @@
 .form {
+  $self: &;
+  position: relative;
+
+  &--smoky {
+    #{$self}__state {
+      background-color: $color-smoky;
+    }
+  }
+
+  &--sending {
+    #{$self}__state {
+      opacity: 1;
+
+      &-preloader {
+        display: block;
+      }
+
+      &-success {
+        display: none;
+      }
+    }
+  }
+  &--done {
+    #{$self}__state {
+      opacity: 1;
+
+      &-success {
+        display: block;
+      }
+    }
+  }
+  &--error {
+    #{$self}__state {
+      opacity: 1;
+
+      &-preloader {
+        display: none;
+      }
+      &-error {
+        display: block;
+      }
+    }
+  }
+
   &__field {
     display: block;
     width: 100%;
@@ -8,9 +52,89 @@
     }
   }
 
+  &__wrapper {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
   &__button {
     display: block;
     width: 100%;
     margin-top: 40px;
+  }
+
+  &__state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: $color-default-white;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &-preloader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 64px;
+      height: 64px;
+
+      display: none;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 64px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg class='preloader__image' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='%23194056' d='M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z'/%3e%3c/svg%3e");
+
+        animation: rotate 1s infinite linear;
+      }
+    }
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: 4px;
+    }
+
+    &-success {
+      display: none;
+      align-self: center;
+      text-align: center;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 10px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 512 512' style='fill:%23000'%3e%3cpath fill='%23194056' d='M504.1 256C504.1 119 393 7.9 256 7.9S7.9 119 7.9 256 119 504.1 256 504.1 504.1 393 504.1 256z'/%3e%3cpath fill='%23FFF' d='M392.6 172.9c-5.8-15.1-17.7-12.7-30.6-10.1-7.7 1.6-42 11.6-96.1 68.8-22.5 23.7-37.3 42.6-47.1 57-6-7.3-12.8-15.2-20-22.3-22.1-22.1-46.8-37.3-47.8-37.9-10.3-6.3-23.8-3.1-30.2 7.3-6.3 10.3-3.1 23.8 7.2 30.2.2.1 21.4 13.2 39.6 31.5 18.6 18.6 35.5 43.8 35.7 44.1 4.1 6.2 11 9.8 18.3 9.8 1.2 0 2.5-.1 3.8-.3 8.6-1.5 15.4-7.9 17.5-16.3.1-.2 8.8-24.3 54.7-72.7 37-39.1 61.7-51.5 70.3-54.9h.3s.3-.1.8-.4c1.5-.6 2.3-.8 2.3-.8-.4.1-.6.1-.6.1v-.1c4-1.7 11.4-4.9 11.5-5 11.1-4.8 14.8-16.8 10.4-28z'/%3e%3c/svg%3e");
+      }
+    }
+
+    &-error {
+      display: none;
+      align-self: center;
+      text-align: center;
+
+      color: red;
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
   }
 }

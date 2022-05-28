@@ -35,16 +35,20 @@
   &--valid {
     input,
     textarea {
-      border-color: green;
+      border-bottom-color: green;
     }
   }
 
-  &--error {
+  &--invalid {
     input,
     textarea {
-      border-color: red;
+      border-bottom-color: red !important;
       color: red;
-      background-color: rgba(red, 0.4);
+      //background-color: rgba(red, 0.4);
+
+      &::placeholder {
+        color: red;
+      }
     }
   }
 

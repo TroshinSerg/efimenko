@@ -1,0 +1,51 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Диджител этикет',
+      isHome: false,
+      section: 3,
+      order: 3.31,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-31.webp", width="1080" height="1620", alt="")
+        h1.post__title Диджител этикет.
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Если Вам пришлось в сложившееся время проходить онлайн собеседования, то необходимо знать.
+
+          p 1️⃣ Соблюдайте опрятный внешний вид;
+
+          p 2️⃣ Приёмы пищи и напитков во время онлайн собеседования недопустимы;
+
+          p 3️⃣ Поддерживайте рабочую атмосферу;
+
+          p 4️⃣ Не перебивайте;
+
+          p 5️⃣ Исключите общение в мессенджерах во время интервью;
+
+          p 6️⃣ Отключайте микрофон, если не говорите;
+
+          p 7️⃣ Строго соблюдайте тайминг.
+
+
+          p ____________________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut!
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

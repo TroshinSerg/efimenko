@@ -6,7 +6,7 @@ block variables
       title: 'Главная',
       isHome: true,
       section: 1,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-      order: 1.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+      order: 1,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
     };
 
     const bc = [{text: page.title}];
@@ -35,16 +35,7 @@ block content
               .services-preview__subtitle!= item.subtitle
               .services-preview__text!= item.text
 
-  section.popular-posts
-    .popular-posts__container.container
-      .popular-posts__grid
-        each item in POPULAR_POSTS
-          .popular-posts__item.popular-post-preview
-            a.popular-post-preview__image(href= item.url)
-              img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
-            .popular-post-preview__main
-              h3.popular-post-preview__title
-                a(href= item.url)!= item.title
+  include ../modules/popular
 
   section.reviews
     .reviews__container.container
@@ -87,21 +78,30 @@ block content
 
 
       .contacts__aside
-        .contacts__form.form
-          form(action="#" method="post")
-            label.form__field.field
-              input(type="text", name="name", placeholder="Имя", required)
+        .contacts__form.form.form--smoky
+          form(method="post")
+            label.form__field.field.field--req
+              input(type="text", name="name", placeholder="Имя")
 
-            label.form__field.field
-              input(type="email", name="email", placeholder="Эл. почта", required)
+            label.form__field.field.field--req
+              input(type="email", name="email", placeholder="Эл. почта")
 
-            label.form__field.field
+            label.form__field.field.field--req
               input(type="tel", name="phone", placeholder="Телефон")
 
             label.form__field.field.field--textarea
               textarea(name="message", placeholder="Добавьте сообщение...")
 
             button.form__button.button.button--theme-black(type="submit") Отправить
+          .form__state
+            .form__state-preloader
+            .form__state-success
+              p Сообщение умпешно отправлено!
+              p Очень скоро я свяжусь с Вами.
+            .form__state-error
+              p Произошла ошибка, сообщение не отправлено!
+              p Попробуйте отправить еще раз или свяжитесь со мной другим способом.
+
 
   .prefooter.prefooter--bg-fixed
     //- +breadcrumbs([], 'className')

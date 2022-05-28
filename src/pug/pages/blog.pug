@@ -6,7 +6,7 @@ block variables
       title: 'Главная',
       isHome: false,
       section: 3,// Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
-      order: 3.01,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
+      order: 3,// Для каждой страницы уникален. Номер смотреть в файле pug/templates/vars.pug в массивах с пунктами меню
     };
 
     const bc = [{text: page.title}];
@@ -26,14 +26,14 @@ block content
           each item in POSTS
             article.blog__item.post-preview(data-category= (item.category === null ? 'all' : item.category))
               .post-preview__image
-                img(src=`images/${item.image.name}.webp`, width= item.image.width, height= item.image.height, alt="")
+                img(src=`images/${item.image.name}.webp`, loading="lazy", width= item.image.width, height= item.image.height, alt="")
               .post-preview__main
                 h2.post-preview__title!= item.title
                 .post-preview__text!= item.text
                 .post-preview__bottom
                   .post-preview__meta
-                    time.post-preview__date(datetime= item.date.attr)!= item.date.text
-                    .post-preview__duration!= item.duration
+                    time.post-preview__date.date(datetime= item.date.attr)!= item.date.text
+                    .post-preview__duration.duration!= item.duration
                   a.post-preview__button.button(href= item.url) Перейти
 
 

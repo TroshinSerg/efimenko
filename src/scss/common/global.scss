@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-family--main;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5;
 
   //@include text();
@@ -26,6 +26,10 @@ body {
   & > header,
   & > footer {
     flex-shrink: 0;
+  }
+
+  @include media(md) {
+    font-size: 18px;
   }
 }
 

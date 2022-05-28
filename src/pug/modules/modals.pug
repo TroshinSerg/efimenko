@@ -1,0 +1,34 @@
+section.modal
+  .modal__inner
+    header.modal__header
+      h2.modal__title Отправить резюме
+      button.modal__close(type="button") [ x ]
+    .modal__main
+      .modal__text Прикрепите файл с вашим резюме или добавьте на него ссылку
+      .modal__form.form
+          form(enctype="multipart/form-data", method="post")
+            label.form__field.field.field--req
+              input(type="text", name="name", placeholder="Имя")
+
+            label.form__field.field.field--req
+              input(type="email", name="email", placeholder="Эл. почта")
+
+            label.form__field.field.field--req
+              input(type="tel", name="phone", placeholder="Телефон")
+
+            .form__wrapper
+              <p>Прикрепить резюме</p>
+               <input type="file" name="myfile[]" id="myfile">
+
+            label.form__field.field.field--textarea
+              textarea(name="message", placeholder="Вы можете добавить сюда ссылку на резюме")
+
+            button.form__button.button.button--theme-black(type="submit") Отправить
+          .form__state
+            .form__state-preloader
+            .form__state-success
+              p Сообщение умпешно отправлено!
+              p Очень скоро я свяжусь с Вами.
+            .form__state-error
+              p Произошла ошибка, сообщение не отправлено!
+              p Попробуйте отправить еще раз или свяжитесь со мной другим способом.

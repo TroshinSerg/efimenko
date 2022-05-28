@@ -1,0 +1,38 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Продолжаю рубрику неубедительных причин держаться за плохую работу.',
+      isHome: false,
+      section: 3,
+      order: 3.05,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-5.webp", width="1100" height="1650", alt="")
+        h1.post__title Продолжаю рубрику неубедительных причин держаться за плохую работу.
+        .post__meta
+          time.post__date.date(datetime="2020-10-28") 28 окт. 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p Часто высоко амбициозные сотрудники, хорошо владеющие аргументом, хотят быть замеченными руководством. Но бывает, что несмотря на его опытность, к его мнению не прислушиваются. Это может быть по разным причинам, ведь работник в данном случае может не охватывать весь объем работы, а только конкретную часть.
+
+          p Руководитель же видит проблему в целом и им движет стремление к успеху всего предприятия. К сожалению, это удел всех работников по найму. Работник выполняет все служебные обязанности четко и грамотно, но ничего не меняется. Перспектив роста карьеры нет и рутина засасывает. Мотива для творчества нет, все дела расписаны на целый год вперед, начальство лучшие проекты отдает другим. Самое время уходить туда, где Ваши знания и умения будут востребованы.
+
+          p _______________________________
+          p Только вперед и вверх!
+          p Seulement vers l'avant et vers le haut
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

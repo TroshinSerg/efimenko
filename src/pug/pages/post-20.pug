@@ -1,0 +1,43 @@
+extends ../templates/main
+
+block variables
+  -
+    const page = {
+      title: 'Как найти работу',
+      isHome: false,
+      section: 3,
+      order: 3.20,
+    };
+
+    const bc = [{text: page.title}];
+
+block content
+  article.post
+    .post__container.container
+      header.post__header
+        .post__image
+          img(src="images/posts/post-20.webp", width="1080" height="1620", alt="")
+        h1.post__title Как найти работу
+        .post__meta
+          time.post__date.date(datetime="2020-05-31") 31 мая 2020 г.
+          .post-preview__duration.duration 1 мин. чтения
+      .post__main
+        .post__text
+          p КАК НАЙТИ РАБОТУ.
+          p ПЯТЬ ШАГОВ К УСПЕХУ:
+          ol
+            li Профессиональное резюме;
+            li Сопроводительные письма;
+            li Алгоритм поиска работы;
+            li Сайты по поиску работы;
+            li Индивидуальная консультация по вопросам.
+
+          p ОБРАЩАЙТЕСЬ.
+
+          p 3117+ ЛЮДЕЙ УЖЕ НАШЛИ РАБОТУ.
+
+
+      footer.post__footer
+        .ya-share2(data-curtain, data-size="s", data-shape="round", data-color-scheme="blackwhite", data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,whatsapp")
+
+  include ../modules/popular

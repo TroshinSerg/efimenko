@@ -1,0 +1,11 @@
+.overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-default-black, 0.5);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
